@@ -3,12 +3,15 @@ import { db } from "@/utils/dbConnection";
 import Link from "next/link";
 
 export default async function Blog({ searchParams }) {
-  const query = await db.query(`SELECT * FROM posts`);
-  const posts = query.rows;
+  // nextjs error kindly reminded me searchParams needs to be awaited, so fixed it, I think? Error is not there anymore and everything seems to work fine
+
+  const query = await searchParams;
+  const response = await db.query(`SELECT * FROM posts`);
+  const posts = response.rows;
   //   console.log(posts);
 
   //sorting data by id
-  const sort = searchParams?.sort || "asc";
+  const sort = query?.sort || "asc";
 
   if (sort === "asc") {
     posts.sort((a, b) => a.id - b.id);
