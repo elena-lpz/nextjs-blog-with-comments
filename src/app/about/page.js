@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <section className="m-4 md:m-15">
+    <section className="my-4 mx-4 md:mx-15 md:my-6">
       <div className="flex flex-col-reverse md:flex-row justify-between items-center pb-15">
         <div className="flex flex-col w-[100%] md:w-[40%]">
           <Image
@@ -14,7 +14,7 @@ export default function AboutPage() {
             alt="about section title"
             className="pt-3 pb-5 md:pb-15"
           />
-          <p className="text-md md:text-2xl font-light">
+          <p className="text-md md:text-2xl font-light pt-6">
             The Female Gaze was born from a simple yet urgent desire: to give
             visibility to women photographers and to celebrate the stories they
             tell. Too often, women&apos;s voices have been overlooked or pushed
@@ -44,7 +44,7 @@ export default function AboutPage() {
         alt="vector image"
         width={380}
         height={75}
-        className="flex left-0"
+        className="flex -ms-15"
       />
     </section>
   );

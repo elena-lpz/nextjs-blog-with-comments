@@ -7,20 +7,38 @@ export default async function LastPost() {
   // console.log(LastPost);
 
   return (
-    <section className="px-6">
-      <h1 className="text-xl">LATEST</h1>
-      <div className="flex gap-4">
-        <img
-          src={lastPost.cover_img}
-          alt="photo of a camera"
-          width={600}
-          height={200}
-          placeholder="blur"
-        />
-        <div>
-          <h2 className=""> {lastPost.title}</h2>
-          <p> {lastPost.content}</p>
-          <Link href={`/blog/${lastPost.id}`}>Read more</Link>
+    <section>
+      <div className="flex flex-col md:flex-row p-6 bg-text text-background gap-6">
+        <div className="md:w-3/5">
+          <img
+            src={lastPost.cover_img}
+            alt="photo of a camera"
+            width={600}
+            height={200}
+            className="w-full h-[400px] object-cover"
+          />
+        </div>
+
+        <div className="md:w-2/5 flex flex-col justify-center">
+          <h3 className="text-2xl font-semibold pb-1"> {lastPost.title}</h3>
+          <p className="text-neutral-500 mb-6">
+            {new Date(lastPost.created_at).toLocaleDateString("en-GB", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </p>
+
+          <p className="h-[150px] w-[90%] overflow-hidden">
+            {" "}
+            {lastPost.content}
+          </p>
+          <Link
+            href={`/blog/${lastPost.id}`}
+            className=" w-fit mt-6 rounded bg-neutral-900 text-white px-4 py-2 hover:bg-neutral-700"
+          >
+            Read more
+          </Link>
         </div>
       </div>
     </section>
