@@ -14,7 +14,7 @@ export default function Main() {
         className="md:-ms-15 md:pb-6"
       />
       <div className=" flex flex-col-reverse md:flex-row items-start justify-between">
-        <p className="flex md:w-[30%] text-md md:text-lg pt-10 md:pt-0">
+        <p className="flex md:w-[30%] text-md md:text-2xl font-light pt-10 md:pt-0">
           Through the Female Gaze, light finds its voice. A quiet revolution
           framed in moments, where women capture the world as only they can see
           it.

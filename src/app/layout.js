@@ -22,9 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${workSans.className} ${fraunces.variable}`}>
+      <body
+        className={`${workSans.className} ${fraunces.variable} flex flex-col min-h-screen`}
+      >
         <Header />
-        <main> {children}</main>
+        <main className="flex-1"> {children}</main>
         <Footer />
       </body>
     </html>
