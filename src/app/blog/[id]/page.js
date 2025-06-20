@@ -18,7 +18,7 @@ export default async function IdPage({ params }) {
   const comments = commentQuery.rows;
 
   //delete comments
-  async function deleteCommentAction(commentId) {
+  async function deleteComment(commentId) {
     "use server";
     await db.query(`DELETE FROM comments WHERE id = $1`, [commentId]);
     revalidatePath(`/blog/${postId}`);
@@ -53,7 +53,7 @@ export default async function IdPage({ params }) {
                 <p>({new Date(comment.created_at).toLocaleString("en-GB")})</p>
               </div>
               <p>{comment.comment}</p>
-              <form action={deleteCommentAction.bind(null, comment.id)}>
+              <form action={deleteComment.bind(null, comment.id)}>
                 <button>Delete</button>
               </form>
             </li>
