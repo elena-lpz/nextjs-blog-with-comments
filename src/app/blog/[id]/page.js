@@ -2,6 +2,7 @@ import avatar1 from "@/../public/avatars/avatar1.png";
 import { CommentForm } from "@/components/CommentsForm";
 import { db } from "@/utils/dbConnection";
 import Image from "next/image";
+import { revalidatePath } from "next/cache";
 
 export default async function IdPage({ params }) {
   const slug = await params;
@@ -15,6 +16,16 @@ export default async function IdPage({ params }) {
     [postId]
   );
   const comments = commentQuery.rows;
+
+  //delete comments
+  async function deleteCommentAction(commentId) {
+    "use server";
+    await db.query(`DELETE FROM comments WHERE id = $1`, [commentId]);
+    revalidatePath(`/blog/${postId}`);
+  }
+
+  // https://dev.to/bhanufyi/understanding-on-delete-cascade-and-on-update-cascade-in-sql-foreign-key-relationships-70o
+  // https://www.reddit.com/r/nextjs/comments/1c0ybvj/server_actions_deleting_from_db_any_wizards_out/
 
   return (
     <>
@@ -42,6 +53,9 @@ export default async function IdPage({ params }) {
                 <p>({new Date(comment.created_at).toLocaleString("en-GB")})</p>
               </div>
               <p>{comment.comment}</p>
+              <form action={deleteCommentAction.bind(null, comment.id)}>
+                <button>Delete</button>
+              </form>
             </li>
           ))}
         </ul>
