@@ -1,16 +1,18 @@
 import avatar1 from "@/../public/avatars/avatar1.png";
+import { CommentForm } from "@/components/CommentsForm";
 import { db } from "@/utils/dbConnection";
 import Image from "next/image";
 
 export default async function IdPage({ params }) {
   const slug = await params;
-  const post = (await db.query(`SELECT * FROM posts WHERE id = ${slug.id};`))
+  const postId = slug.id;
+  const post = (await db.query(`SELECT * FROM posts WHERE id = ${postId};`))
     .rows[0];
 
   //get the comments
   const commentQuery = await db.query(
     `SELECT * FROM comments WHERE post_id = $1 ORDER BY created_at ASC`,
-    [slug.id]
+    [postId]
   );
   const comments = commentQuery.rows;
 
@@ -18,6 +20,9 @@ export default async function IdPage({ params }) {
     <>
       <h2>{post.title}</h2>
       <p>{post.content}</p>
+      <h2 className="mt-6">Leave a comment:</h2>
+      <CommentForm postId={postId} />
+
       <h2 className="mt-6">Comments:</h2>
       {comments.length > 0 ? (
         <ul>
