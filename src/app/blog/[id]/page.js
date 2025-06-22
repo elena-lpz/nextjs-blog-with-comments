@@ -58,8 +58,8 @@ export default async function IdPage({ params }) {
         src={post.cover_img}
         alt="cover photo"
         width={1200}
-        height={500}
-        className="w-full h-[400px] object-cover p-4 bg-text"
+        height={600}
+        className="w-full h-[50dvh] md:h-[70dvh] object-cover p-4 bg-text"
       />
 
       <div className="flex my-4 flex-col">

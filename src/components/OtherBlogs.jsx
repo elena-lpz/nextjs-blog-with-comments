@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default async function OtherBlogs({ currentPostId }) {
   const query = await db.query(
-    `SELECT * FROM posts WHERE id != $1 ORDER BY created_at DESC LIMIT 4`,
+    `SELECT * FROM posts WHERE id != $1 ORDER BY RANDOM() LIMIT 4`,
     [currentPostId]
   );
   const posts = query.rows;
