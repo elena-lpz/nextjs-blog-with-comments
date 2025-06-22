@@ -1,10 +1,12 @@
-import avatar1 from "@/../public/avatars/avatar1.png";
 import { CommentForm } from "@/components/CommentsForm";
 import { db } from "@/utils/dbConnection";
 import Image from "next/image";
 import { revalidatePath } from "next/cache";
 import { CommentsList } from "@/components/CommentsList";
 import { redirect } from "next/navigation";
+import OtherBlogs from "@/components/OtherBlogs";
+import Link from "next/link";
+import { IconArrowLeft } from "@tabler/icons-react";
 
 export default async function IdPage({ params }) {
   const slug = await params;
@@ -45,7 +47,13 @@ export default async function IdPage({ params }) {
 
   return (
     <section className="my-4 mx-4 md:mx-15 md:my-6">
-      <h1 className=" text-4xl md:text-6xl pb-6">{post.title}</h1>
+      <Link
+        href="/blog"
+        className="hover:text-heading text-md md:text-xl flex gap-2 items-center"
+      >
+        <IconArrowLeft size={18} /> Return to blog
+      </Link>
+      <h1 className=" text-4xl md:text-6xl pt-4 md:pt-6 pb-6">{post.title}</h1>
       <Image
         src={post.cover_img}
         alt="cover photo"
@@ -103,6 +111,7 @@ export default async function IdPage({ params }) {
           </div>
         </div>
       </div>
+      <OtherBlogs currentPostId={postId} />
     </section>
   );
 }

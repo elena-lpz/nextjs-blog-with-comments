@@ -2,7 +2,7 @@
 import { IconEdit, IconTrash } from "@tabler/icons-react";
 import { useState } from "react";
 import Image from "next/image";
-import avatar1 from "@/../public/avatars/avatar1.png";
+import avatar04 from "@/../public/avatars/avatar04.png";
 
 export function CommentsList({ comments, deleteComment, updateComment }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -41,8 +41,8 @@ export function CommentsList({ comments, deleteComment, updateComment }) {
           <div className="flex justify-between pb-4">
             <div className="flex gap-4">
               <Image
-                src={avatar1}
-                alt="illustration"
+                src={avatar04}
+                alt="avatar"
                 width={50}
                 height={50}
                 placeholder="blur"
@@ -78,7 +78,7 @@ export function CommentsList({ comments, deleteComment, updateComment }) {
           {/* shows the form when editing the correcponding id */}
           {isEditing && currentComment?.id === comment.id ? (
             <form
-              onSubmit={(e) => handleUpdate(e, comment.id)}
+              onSubmit={(e) => handleUpdate(e)}
               className="flex flex-col gap-2"
             >
               <textarea

@@ -3,7 +3,7 @@ import { db } from "@/utils/dbConnection";
 import Link from "next/link";
 import Image from "next/image";
 import blogtitle from "@/../public/titles/blogtitle.svg";
-import { IconArrowDown, IconArrowUp, IconArrowdown } from "@tabler/icons-react";
+import { IconArrowDown, IconArrowUp } from "@tabler/icons-react";
 
 export const metadata = {
   title: "Blog - The Female gaze",

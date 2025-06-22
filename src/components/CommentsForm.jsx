@@ -28,13 +28,15 @@ export function CommentForm({ postId }) {
         name="username"
         className="w-full border rounded p-2"
         placeholder="Username"
+        required
       />
       <label htmlFor="comment">Comment:</label>
       <textarea
         name="comment"
         rows={4}
         className="w-full border rounded p-2"
-        placeholder="Enter your comment here."
+        placeholder="Enter your comment here"
+        required
       />
       <button
         type="submit"
