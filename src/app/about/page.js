@@ -4,6 +4,11 @@ import vector from "@/../public/misc/vector.png";
 
 import Image from "next/image";
 
+export const metadata = {
+  title: "About - The female gaze",
+  description: "A blog about female photographers.",
+};
+
 export default function AboutPage() {
   return (
     <section className="my-4 mx-4 md:mx-15 md:my-6">

@@ -5,6 +5,11 @@ import Image from "next/image";
 import blogtitle from "@/../public/titles/blogtitle.svg";
 import { IconArrowDown, IconArrowUp, IconArrowdown } from "@tabler/icons-react";
 
+export const metadata = {
+  title: "Blog - The Female gaze",
+  description: "A blog about female photographers.",
+};
+
 export default async function Blog({ searchParams }) {
   // nextjs error kindly reminded me searchParams needs to be awaited, so fixed it, I think? Error is not there anymore and everything seems to work fine
 
