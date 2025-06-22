@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [new URL("https://cdn.shopify.com/**")],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "dl.dropboxusercontent.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

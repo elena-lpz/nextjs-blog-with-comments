@@ -7,14 +7,14 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <section className="my-4 mx-4 md:mx-15 md:my-6">
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center pb-15">
-        <div className="flex flex-col w-[100%] md:w-[40%]">
+      <div className="flex flex-col-reverse lg:flex-row justify-between items-center pb-15">
+        <div className="flex flex-col w-[100%] lg:w-[40%]">
           <Image
             src={aboutsection}
             alt="about section title"
             className="pt-3 pb-5 md:pb-15"
           />
-          <p className="text-md md:text-2xl font-light pt-6">
+          <p className="text-md md:text-xl lg:text-2xl font-light pt-6">
             The Female Gaze was born from a simple yet urgent desire: to give
             visibility to women photographers and to celebrate the stories they
             tell. Too often, women&apos;s voices have been overlooked or pushed
@@ -33,6 +33,7 @@ export default function AboutPage() {
             alt="Vivian Maier photographing herself and a child"
             width={560}
             height={373}
+            placeholder="blur"
           />
           <p className="text-neutral-400 text-xs text-right w-[100%] md:text-sm pt-1 md:pt-2">
             © Vivian Maier

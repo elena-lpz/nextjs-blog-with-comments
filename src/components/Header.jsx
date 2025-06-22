@@ -7,10 +7,16 @@ export default function Header() {
     <header>
       <div className="flex justify-between items-center my-6 mx-4 md:my-8 md:mx-15">
         <Image src={logo} alt="female gaze small logo" />
-        <nav className="flex justify-center font-bold gap-4">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/blog">Blog</Link>
+        <nav className="flex justify-center text-lg md:text-xl font-semibold gap-4 ">
+          <Link href="/" className="hover:text-heading">
+            Home
+          </Link>
+          <Link href="/about" className="hover:text-heading">
+            About
+          </Link>
+          <Link href="/blog" className="hover:text-heading">
+            Blog
+          </Link>
         </nav>
       </div>
     </header>

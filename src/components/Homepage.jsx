@@ -3,7 +3,7 @@ import tonjebboe1 from "@/../public/photography/tonjebboe1.jpg";
 import vector from "@/../public/misc/vector.png";
 import Image from "next/image";
 
-export default function Main() {
+export default function Homepage() {
   return (
     <section className=" m-4 md:m-15">
       <Image
@@ -14,7 +14,7 @@ export default function Main() {
         className="md:-ms-15 md:pb-6"
       />
       <div className=" flex flex-col-reverse md:flex-row items-start justify-between">
-        <p className="flex md:w-[30%] text-md md:text-2xl font-light pt-10 md:pt-0">
+        <p className="flex md:w-[30%] text-md md:text-xl lg:text-2xl font-light pt-10 md:pt-0">
           Through the Female Gaze, light finds its voice. A quiet revolution
           framed in moments, where women capture the world as only they can see
           it.
@@ -26,6 +26,7 @@ export default function Main() {
             width={400}
             height={200}
             className="w-[70%] md:w-[50%] xl:w-[70%] pt-10 md:pt-0"
+            placeholder="blur"
           />
           <p className="text-neutral-400 text-xs w-[70%] text-right md:w-[100%] md:text-sm pt-1 md:pt-2">
             © Tonje Boe Birkeland, Character #III
