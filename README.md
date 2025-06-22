@@ -25,7 +25,7 @@ NextJS was a bit hard to use at times and I feel like I may have made some mista
 
 I also had some trouble with the font I chose appearing different when on the browser, I discussed this with Manny but I was unable to fix it, that's why some of the titles are images, though I know this is not good practice and might not be the best for SEO resons.
 
-I would have liked to assign random avatars to comments but this was a last minute idea and my db table was not designed with this in mind so I left it for another time.
+I would have liked to assign random avatars to comments but this was a last minute idea and my db table was not designed with this in mind so I left it for another time. I should have also added alt text to the images in my db, but by the time I realised my mistake it was a bit late to redo the db tables.
 
 Overall, I learned a lot while working on this project, so I'm quite happy. This time, I chose to use Trello to help me stay organized, as I found that challenging in my previous project. Using Trello (see the Trello board in the designs folder) made the process much smoother and helped me stay on track.
 
