@@ -4,7 +4,7 @@ A blog with comments built using NextJS
 
 # Requirements
 
-This week I achieved all the requirements and some stretch goals like:
+This week I achieved all the requirements (the redirect is in the post/id page) and some stretch goals like:
 
 - Editing of comments inline
 - Creation of LastPost component to display on the blog page
